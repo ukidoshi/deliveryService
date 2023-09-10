@@ -7,14 +7,17 @@
    
 ## Как развернуть веб-приложение:
  - Открыть терминал.
- - `git clone https://github.com/ukidoshi/deliveryService.git`
- - `cd deliveryService`
- - `php composer.phar install`
- - `php composer.phar update`
- - `cp .env.example .env`
- - `php artisan key:generate`
- - `php artisan config:cache`
- - `php artisan serve`
+ - Скопировать команды ниже и вставить в терминал
+```
+    git clone https://github.com/ukidoshi/deliveryService.git
+    cd deliveryService
+    php composer.phar install
+    php composer.phar update
+    cp .env.example .env
+    php artisan key:generate
+    php artisan config:cache
+    php artisan serve
+```
  - Терминал выдаст ссылку на развернутый локальный проект. По умолчанию, это `http://127.0.0.1:8000`, но порт может быть другим, если он занят.
  - Перейти на страницу `http://127.0.0.1:8000/shipping_calculator`.
 
