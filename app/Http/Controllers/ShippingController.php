@@ -14,23 +14,23 @@ class ShippingController extends Controller
     public function getShippingCost(Request $request)
     {
         // Получаем данные о доставке из $request
-        $sourceKladr = $request->input('source_kladr'); // кладр откуда везем
-        $targetKladr = $request->input('target_kladr'); // кладр куда везем
+        $source_kladr = $request->input('source_kladr'); // кладр откуда везем
+        $target_kladr = $request->input('target_kladr'); // кладр куда везем
         $weight = $request->input('weight'); // вес отправления в кг
 
         // В нашем случае, имеем два выбора службы доставки: fast_delivery или slow_delivery
-        $selectedService = $request->input('selected_service');
+        $selected_service = $request->input('selected_service');
 
         // делаем расчет доставки на основе запроса
         $shipment = new Shipment();
-        $deliveryData = $shipment->calculateShippingCost($selectedService, $sourceKladr, $targetKladr, $weight);
+        $delivery_data = $shipment->calculateShippingCost($selected_service, $source_kladr, $target_kladr, $weight);
 
         return view('shipping.calcForm', [
-            'selectedService' => $selectedService,
-            'sourceKladr' => $sourceKladr,
-            'targetKladr' => $targetKladr,
+            'selected_service' => $selected_service,
+            'source_kladr' => $source_kladr,
+            'target_kladr' => $target_kladr,
             'weight' => $weight,
-            'deliveryData' => $deliveryData,
+            'delivery_data' => $delivery_data,
         ]);
     }
 }

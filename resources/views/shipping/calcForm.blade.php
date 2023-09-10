@@ -33,11 +33,11 @@
         @csrf
         <div class="form-group">
             <label for="source_kladr">Откуда (КЛАДР):</label>
-            <input type="text" class="form-control" id="source_kladr" name="source_kladr" value="{{ $sourceKladr ?? '' }}" required>
+            <input type="text" class="form-control" id="source_kladr" name="source_kladr" value="{{ $source_kladr ?? '' }}" required>
         </div>
         <div class="form-group">
             <label for="target_kladr">Куда (КЛАДР):</label>
-            <input type="text" class="form-control" id="target_kladr" name="target_kladr" value="{{ $targetKladr ?? '' }}" required>
+            <input type="text" class="form-control" id="target_kladr" name="target_kladr" value="{{ $target_kladr ?? '' }}" required>
         </div>
         <div class="form-group">
             <label for="weight">Вес (кг):</label>
@@ -46,11 +46,11 @@
         <div class="form-group">
             <label for="selected_service">Служба доставки:</label>
             <select class="form-control" id="selected_service" name="selected_service">
-                @if(isset($selectedService))
-                    @if($selectedService == "fast_delivery")
+                @if(isset($selected_service))
+                    @if($selected_service == "fast_delivery")
                         <option value="fast_delivery" selected>Быстрая доставка</option>
                         <option value="slow_delivery">Медленная доставка</option>
-                    @elseif($selectedService == "slow_delivery")
+                    @elseif($selected_service == "slow_delivery")
                         <option value="fast_delivery">Быстрая доставка</option>
                         <option value="slow_delivery" selected>Медленная доставка</option>
                     @endif
@@ -62,10 +62,10 @@
         </div>
         <button type="submit" class="btn btn-primary">Рассчитать</button>
     </form>
-    @if(isset($deliveryData))
+    @if(isset($delivery_data))
         <h3>Результаты расчета:</h3>
-        <p><strong>Стоимость:</strong> {{ $deliveryData['price'] }} руб.</p>
-        <p><strong>Дата доставки:</strong> {{ $deliveryData['date'] }}</p>
+        <p><strong>Стоимость:</strong> {{ $delivery_data['price'] }} руб.</p>
+        <p><strong>Дата доставки:</strong> {{ $delivery_data['date'] }}</p>
     @endif
 </div>
 </body>

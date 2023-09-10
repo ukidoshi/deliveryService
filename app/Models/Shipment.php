@@ -21,22 +21,22 @@ class Shipment extends Model
     {
         // получаем из бд DeliveryService поле base_url транспортной компании $delivery_name
         // для отправки набора отправлений
-        // $deliveryService = DeliveryService::where('name', $delivery_name)->first();
+        // $delivery_service = DeliveryService::where('name', $delivery_name)->first();
         //
-        // if ($deliveryService) {
-        //     $baseUrl = $deliveryService->base_url;
+        // if ($delivery_service) {
+        //     $baseUrl = $delivery_service->base_url;
         // } else {
         //     // Обработка случая, когда служба доставки с указанным именем не найдена
         // }
 
         // отправляем запрос в службу доставки
-        // $deliveryService = new DeliveryService();
+        // $delivery_service = new DeliveryService();
         // $request_to_shipping_company = [
-        //    'sourceKladr' => $source_kladr,
-        //    'targetKladr' => $target_kladr,
+        //    'source_kladr' => $source_kladr,
+        //    'target_kladr' => $target_kladr,
         //    'weight' => $weight,
         // ];
-        // $shipping_data = $deliveryService->getShippingData($request_to_shipping_company, $base_url);
+        // $shipping_data = $delivery_service->getShippingData($request_to_shipping_company, $base_url);
 
         // Пример ответа (в зависимости, от выбора службы доставки):
         $example_shipping_data = [];
@@ -58,8 +58,8 @@ class Shipment extends Model
         $return = [];
         if ($delivery_name == "fast_delivery") {
             // получаем дату добавив кол-во дней доставки
-            $newDateTimestamp = strtotime("+".$example_shipping_data["period"]." days", strtotime(date('Y-m-d')));
-            $result_date = date('Y-m-d', $newDateTimestamp);
+            $new_date_timestamp = strtotime("+".$example_shipping_data["period"]." days", strtotime(date('Y-m-d')));
+            $result_date = date('Y-m-d', $new_date_timestamp);
 
             $return = [
                 'price' => $example_shipping_data["price"],
