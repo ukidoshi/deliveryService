@@ -64,7 +64,7 @@
     </form>
     @if(isset($deliveryData))
         <h3>Результаты расчета:</h3>
-        <p><strong>Стоимость:</strong> {{ $deliveryData['price'] }}</p>
+        <p><strong>Стоимость:</strong> {{ $deliveryData['price'] }} руб.</p>
         <p><strong>Дата доставки:</strong> {{ $deliveryData['date'] }}</p>
     @endif
 </div>
