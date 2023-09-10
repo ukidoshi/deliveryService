@@ -33,15 +33,15 @@
         @csrf
         <div class="form-group">
             <label for="source_kladr">Откуда (КЛАДР):</label>
-            <input type="text" class="form-control" id="source_kladr" name="source_kladr" value="{{ $sourceKladr }}" required>
+            <input type="text" class="form-control" id="source_kladr" name="source_kladr" value="{{ $sourceKladr ?? '' }}" required>
         </div>
         <div class="form-group">
             <label for="target_kladr">Куда (КЛАДР):</label>
-            <input type="text" class="form-control" id="target_kladr" name="target_kladr" value="{{ $targetKladr }}" required>
+            <input type="text" class="form-control" id="target_kladr" name="target_kladr" value="{{ $targetKladr ?? '' }}" required>
         </div>
         <div class="form-group">
             <label for="weight">Вес (кг):</label>
-            <input type="number" class="form-control" id="weight" name="weight" value="{{ $weight }}" required>
+            <input type="number" class="form-control" id="weight" name="weight" value="{{ $weight ?? '' }}" required>
         </div>
         <div class="form-group">
             <label for="selected_service">Служба доставки:</label>
