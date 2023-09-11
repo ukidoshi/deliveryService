@@ -8,6 +8,19 @@
 ## Как развернуть веб-приложение:
  - Открыть терминал.
  - Скопировать команды ниже и вставить в терминал
+ - Windows:
+```
+    git clone https://github.com/ukidoshi/deliveryService.git
+    cd deliveryService
+    php composer.phar install
+    php composer.phar update
+    copy .env.example .env
+    php artisan key:generate
+    php artisan config:cache
+    cls
+    php artisan serve
+```
+ - Unix system:
 ```
     git clone https://github.com/ukidoshi/deliveryService.git
     cd deliveryService
@@ -16,6 +29,7 @@
     cp .env.example .env
     php artisan key:generate
     php artisan config:cache
+    clear
     php artisan serve
 ```
  - Терминал выдаст ссылку на развернутый локальный проект. По умолчанию, это `http://127.0.0.1:8000`, но порт может быть другим, если он занят.
